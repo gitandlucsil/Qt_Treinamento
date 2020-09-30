@@ -1,0 +1,7 @@
+<RCC>
+    <qresource prefix="/">
+        <file>main.qml</file>
+        <file>macaco-loco.jpg</file>
+        <file>mojo-jojo.png</file>
+    </qresource>
+</RCC>
