@@ -1,0 +1,7 @@
+<RCC>
+    <qresource prefix="/">
+        <file>main.qml</file>
+        <file>Receptor.qml</file>
+        <file>Notificador.qml</file>
+    </qresource>
+</RCC>
