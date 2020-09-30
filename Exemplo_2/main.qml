@@ -5,7 +5,7 @@ Window {
     width: 640
     height: 480
     visible: true
-    title: qsTr("Hello World")
+    title: qsTr("Exemplo 2")
 
     property string mString: "http://www.inobram.com.br"
     property int mInt: 734
