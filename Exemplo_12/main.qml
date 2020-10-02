@@ -2,6 +2,7 @@ import QtQuick 2.14
 import QtQuick.Window 2.14
 import QtQuick.Layouts 1.12
 import QtQuick.Controls 2.12
+import "javascript/api.js" as API
 
 Window {
     width: 640
@@ -9,20 +10,20 @@ Window {
     visible: true
     title: qsTr("Exemplo 12")
 
-    function buscarPiada(url, callback){
-        var xhr = new XMLHttpRequest()
-        xhr.onreadystatechange = function(){
-            if(xhr.readyState === XMLHttpRequest.DONE){
-                if(xhr.status === 200){
-                    callback(xhr.responseText.toString())
-                }else{
-                    callback(null)
-                }
-            }
-        }
-        xhr.open("GET", url)
-        xhr.send()
-    }
+//    function buscarPiada(url, callback){
+//        var xhr = new XMLHttpRequest()
+//        xhr.onreadystatechange = function(){
+//            if(xhr.readyState === XMLHttpRequest.DONE){
+//                if(xhr.status === 200){
+//                    callback(xhr.responseText.toString())
+//                }else{
+//                    callback(null)
+//                }
+//            }
+//        }
+//        xhr.open("GET", url)
+//        xhr.send()
+//    }
 
     ColumnLayout{
         anchors.fill: parent
@@ -43,7 +44,7 @@ Window {
 
             onClicked: {
                 console.log("Clicked")
-                buscarPiada("http://api.icndb.com/jokes/random", json => {
+                API.buscarPiada("http://api.icndb.com/jokes/random", json => {
                                 if(json){
                                     let json_obj = JSON.parse(json)
                                     mListModelId.append({"joke":json_obj.value.joke})
